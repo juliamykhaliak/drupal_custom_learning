@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function plugin_messages_preprocess_page(&$variables) {
+  $plugin_service = \Drupal::service('plugin.manager.plugin_messages');
+  foreach ($plugin_service->getDefinitions() as $plugin_id => $plugin) {
+    $instance = $plugin_service->createInstance($plugin_id);
+    $message_type = $instance->getMessageType();
+    $message = $instance->getMessage();
+
+    $pages = implode("\n", $instance->getPages());
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_match = \Drupal::service('path.matcher')->matchPath($current_path, $pages);
+
+    if (empty($instance->getPages()) || $path_match) {
+      \Drupal::messenger()->addMessage($message, $message_type);
+    }
+  }
+}

@@ -1,0 +1,7 @@
+date.hook_theme:
+  path: '/hook-theme'
+  defaults:
+    _controller: '\Drupal\date\Controller\HookThemeExamplesController::page'
+    _title: 'hook_theme() examples'
+  requirements:
+    _permission: 'access content'

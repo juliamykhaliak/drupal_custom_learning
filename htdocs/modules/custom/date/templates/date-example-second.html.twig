@@ -1,0 +1,18 @@
+{% if items is not empty %}
+  <{{ list_type }}>
+    {% for item in items %}
+      <li>
+        {% if item.title %}
+          <h3 class="title">
+            {{ item.title }}
+          </h3>
+        {% endif %}
+        {% if item.text %}
+          <p class="text">
+            {{ item.text }}
+          </p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </{{ list_type }}>
+{% endif %}

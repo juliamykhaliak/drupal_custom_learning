@@ -1,0 +1,4 @@
+name: date
+type: module
+core: 8.x
+description: Adds date to page

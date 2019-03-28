@@ -1,0 +1,32 @@
+<?php
+
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function authorization_hook_module_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+   $form['welcome'] = [
+     '#markup' => '<h2>Hello form!</h2>',
+     '#weight' => -100,
+   ];
+   $form['name']['#attributes']['placeholder'] = 'Enter your username here';
+   $form['pass']['#attributes']['placeholder'] = 'Enter your password here';
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function authorization_hook_module_user_login($account) {
+  $message = new TranslatableMarkup('Nice to see you again, <b>@username</b>', [
+    '@username' => $account->getDisplayName(),
+  ]);
+  \Drupal::messenger()->addMessage($message);
+}
+
+/**
+ * Implements hook_user_format_name_alter().
+ */
+function authorization_hook_module_user_format_name_alter(&$name, $account) {
+  $name.= ' (' . $account->id() . ')';
+}

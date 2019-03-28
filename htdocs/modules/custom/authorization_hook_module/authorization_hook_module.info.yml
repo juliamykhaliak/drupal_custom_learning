@@ -1,0 +1,4 @@
+name: authorization_hook_module
+description: This provides message and placeholder to authorization form, id to the name of user
+core: 8.x
+type: module

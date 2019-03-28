@@ -1,0 +1,63 @@
+<?php
+
+use Drupal\Component\Utility\NestedArray;
+
+/**
+ * Implements hook_preprocess_HOOK() for page.html.twig.
+ */
+function messages_on_pages_module_preprocess_page(&$variables) {
+  $is_authenticated = \Drupal::currentUser()->isAuthenticated();
+  $messages = [
+    'Default message',
+  ];
+
+  //hook_my_page_message().
+  $result = \Drupal::moduleHandler()->invokeAll('my_page_message');
+  $messages = NestedArray::mergeDeep($messages, $result);
+
+  //hook_my_page_message_alter().
+  //hook_my_page_message_USER_TYPE_alter().
+  \Drupal::moduleHandler()->alter([
+    'my_page_message',
+    'my_page_message_' . ($is_authenticated ? 'authenticated' : 'anonymous'),
+    ], $messages);
+
+  if (!empty($messages)) {
+    foreach ($messages as $message) {
+      \Drupal::messenger()->addMessage($message);
+    }
+  }
+}
+
+/**
+ * Implements hook_my_page_message().
+ */
+function messages_on_pages_module_my_page_message() {
+  return [
+    'Hello there',
+    'Hello there 2',
+  ];
+}
+
+/**
+ * Implements hook_my_page_message_alter().
+ */
+function messages_on_pages_module_my_page_message_alter(&$messages) {
+  $messages[2] = 'We replaced "Hello there 2"';
+  $messages[] = 'Added new one';
+}
+
+/**
+ * Implements hook_my_page_messages_USER_TYPE_alter().
+ */
+
+function messages_on_pages_module_my_page_message_anonymous_alter(&$messages) {
+  $messages[] = 'Hello anonymous user';
+}
+
+/**
+ * Implements hook_my_page_messages_USER_TYPE_alter().
+ */
+function messages_on_pages_module_my_page_message_authenticated_alter(&$messages) {
+  $messages[] = 'Hi authenticated!';
+}

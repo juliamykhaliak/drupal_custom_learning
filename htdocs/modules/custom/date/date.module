@@ -1,0 +1,29 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function date_theme($existing, $type, $theme, $path) {
+  return [
+    'date_example_first' => [
+      'variables' => [],
+    ],
+    // Show data as a list ordered/unordered,
+    // preprocess in date.theme.inc.
+    'date_example_second' => [
+      'variables' => [
+        'list_type' => 'ul',
+        'items' => NULL,
+      ],
+      'file' => 'date.theme.inc',
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_HOOK().
+ */
+function template_preprocess_date_example_first(&$variables) {
+  $date_formatter = \Drupal::service('date.formatter');
+  $variables['date'] = $date_formatter->format(time());
+}

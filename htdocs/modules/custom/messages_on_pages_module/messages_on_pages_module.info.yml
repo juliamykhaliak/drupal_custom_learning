@@ -1,0 +1,4 @@
+name: messages_on_pages_module
+description: Adds messages on all pages
+type: module
+core: 8.x

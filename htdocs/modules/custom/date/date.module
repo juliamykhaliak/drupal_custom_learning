@@ -17,6 +17,21 @@ function date_theme($existing, $type, $theme, $path) {
       ],
       'file' => 'date.theme.inc',
     ],
+    // Showing quotes on pages,
+    // preprocess in date.theme.inc.
+    [
+      'date_example_quote' => [
+        'variables' => [
+          'quote' => NULL,
+          'author' => NULL,
+          'year' => NULL,
+          'source_title' => NULL,
+          'source_url' => NULL,
+        ],
+        'file' => 'date.theme.inc',
+        'pattern' => 'date_example_quote__',
+      ],
+    ],
   ];
 }
 
@@ -27,3 +42,4 @@ function template_preprocess_date_example_first(&$variables) {
   $date_formatter = \Drupal::service('date.formatter');
   $variables['date'] = $date_formatter->format(time());
 }
+

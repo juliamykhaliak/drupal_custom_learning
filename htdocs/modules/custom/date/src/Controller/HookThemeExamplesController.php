@@ -34,10 +34,19 @@ class HookThemeExamplesController extends ControllerBase {
         ],
       ],
     ];
+    // Example #3 (quote).
+    $result_quote = [
+      '#theme' => 'date_example_quote',
+      '#quote' => 'It was a nice day',
+      '#author' => 'John Doe',
+      '#year' => '2019',
+      '#source_title' => 'Google',
+      '#source_url' => 'https://google.com/',
+    ];
     return [
       $results1,
       $results,
+      $result_quote,
     ];
   }
-
 }

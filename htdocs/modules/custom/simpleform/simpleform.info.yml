@@ -1,0 +1,5 @@
+name: simpleform
+core: 8.x
+description: This simple form uses FormBase
+type: module
+configure: collect_phone_settings.admin_settings

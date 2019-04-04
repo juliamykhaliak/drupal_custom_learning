@@ -19,7 +19,6 @@ function date_theme($existing, $type, $theme, $path) {
     ],
     // Showing quotes on pages,
     // preprocess in date.theme.inc.
-    [
       'date_example_quote' => [
         'variables' => [
           'quote' => NULL,
@@ -31,7 +30,6 @@ function date_theme($existing, $type, $theme, $path) {
         'file' => 'date.theme.inc',
         'pattern' => 'date_example_quote__',
       ],
-    ],
   ];
 }
 

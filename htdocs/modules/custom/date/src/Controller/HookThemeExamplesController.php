@@ -14,7 +14,7 @@ class HookThemeExamplesController extends ControllerBase {
   /**
    * {@inheritdoc}
    */
-  public function page() {
+  public function build() {
     // Example #1.
     $results1 = [
       '#theme' => 'date_example_first',

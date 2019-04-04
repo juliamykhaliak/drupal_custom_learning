@@ -1,0 +1,50 @@
+<?php
+
+/**
+ * @file
+ * Main file for custom hooks and functions
+ */
+
+//$result_html = \Drupal::service('renderer')->renderPlain($result);
+
+/**
+ * Implements hook_theme().
+ */
+function demald_theme($existing, $type, $theme, $path) {
+  return [
+    'demald_example_first' => [
+      'variables' => [],
+    ],
+    'demald_example_second' => [
+      'variables' => [
+        'list_type' => 'ul',
+        'items' => [],
+      ],
+      'file' => 'demald.theme.inc',
+    ],
+    'demald_quote' => [
+      'variables' => [
+        'quote' => NULL,
+        'author' => NULL,
+        'year' => NULL,
+        'source_title' => NULL,
+        'source_url' => NULL,
+      ],
+      'file' => 'demald.theme.inc',
+      'pattern' => 'demald_quote__',
+    ],
+  ];
+}
+
+/**
+ * Implements template_preprocess_HOOK() for demald_example_first.
+ *
+ * @param $variables
+ */
+function template_preprocess_demald_example_first(&$variables) {
+  $time = \Drupal::time()->getRequestTime();
+  /** @var \Drupal\Core\Datetime\DateFormatter $date_formatter */
+  $date_formatter = \Drupal::service('date.formatter');
+  $variables['time'] = $date_formatter->format($time);
+}
+

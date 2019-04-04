@@ -1,0 +1,23 @@
+demald.example.first:
+  path: '/example/first'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\demald\Controller\DemaldController::build'
+  requirements:
+    _permission: 'access content'
+
+demald.example.second:
+  path: '/example/second'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\demald\Controller\DemaldSecondController::build'
+  requirements:
+    _permission: 'access content'
+
+demald.example.third:
+  path: '/example/third'
+  defaults:
+    _title: 'Example'
+    _controller: '\Drupal\demald\Controller\DemaldThirdController::build'
+  requirements:
+    _permission: 'access content'

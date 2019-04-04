@@ -1,0 +1,9 @@
+<?php
+
+use \Drupal\Core\Form\FormStateInterface;
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function simpleform_form_collect_phone_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $form['phone_number']['#description'] = t('Start with + at your country code');
+}

@@ -1,0 +1,20 @@
+<?php
+
+use Drupal\Component\Utility\Html;
+/**
+* Implements hook_form_FORM_ID_alter().
+*/
+function ajax_form_form_contact_message_feedback_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['system_messages'] = [
+    '#markup' => '<div id="' . Html::getClass($form_id) . '-messages"></div>',
+    '#weight' => -100,
+    ];
+
+  $form['actions']['submit']['#ajax'] = [
+    'callback' => 'Drupal\ajax_form\AjaxContactSubmit::ajaxSubmitCallback',
+    'event' => 'click',
+    'progress' => [
+    'type' => 'throbber',
+    ],
+  ];
+}

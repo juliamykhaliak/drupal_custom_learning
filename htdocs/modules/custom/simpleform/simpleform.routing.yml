@@ -1,0 +1,14 @@
+collect_phone.form:
+  path: '/collect-phone'
+  defaults:
+    _title: 'Collect phone, form API example'
+    _form: 'Drupal\simpleform\Form\CollectPhone'
+  requirements:
+    _permission: access content
+collect_phone_settings.admin_settings:
+  path: '/admin/config/simpleform'
+  defaults:
+    _title: 'Settings for CollectPhone form.'
+    _form: '\Drupal\simpleform\Form\CollectFormSettings'
+  requirements:
+    _permission: 'administer site configuration'

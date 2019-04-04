@@ -1,0 +1,9 @@
+<blockquote{{ attributes.addClass('demald-quote') }}>
+  <p>{{ quote }}</p>
+
+  {% if footer %}
+    - {{ footer|raw }}
+  {% endif %}
+</blockquote>
+
+{#{{ dd(_context) }}#}

@@ -1,0 +1,4 @@
+name: ajax_form
+core: 8.x
+type: module
+description: AJAX sendiing and validation of form

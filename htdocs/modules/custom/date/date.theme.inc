@@ -18,19 +18,20 @@ function template_preprocess_date_example_second(&$variables) {
 /**
  * Implements template_preprocess_HOOK().
  */
-function template_preprocess_date_example_quote(&$variables) {
+function template_preprocess_date_example_quote(array &$variables) {
   // Default value for new variable.
   $variables['source'] = NULL;
   $source = &$variables['source'];
+
   // If we have 2 values of title and url.
-  if ($variables['source_title' && $variables['source_url']]) {
+  if ($variables['source_title'] && $variables['source_url']) {
     // Generate object URL.
-    $url = Url::fromUri($variables['source_url'], [
+    $url = Url::fromUri($variables['source_url']/*, [
       'attributes' => [
         'target' => '_blank',
         'rel' => 'nofollow',
       ],
-    ]);
+    ]*/);
     // Generate link.
     $source = Link::fromTextAndUrl($variables['source_title'], $url)->toString();
   }

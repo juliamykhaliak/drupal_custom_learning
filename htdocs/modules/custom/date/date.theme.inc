@@ -16,6 +16,40 @@ function template_preprocess_date_example_second(&$variables) {
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function date_theme_suggestions_date_example_quote(array $variables) {
+  $suggestions = [];
+  $transliteration = \Drupal::transliteration();
+  $author = $variables['author'];
+  $year = $variables['year'];
+  $source = $variables['source_title'];
+  if ($author) {
+    $author = $transliteration->transliterate($author);
+    $author = strtolower($author);
+    $author = str_replace(' ', '_', $author);
+  }
+  if ($source) {
+    $source = $transliteration->transliterate($source);
+    $source = strtolower($source);
+    $source = str_replace(' ', '_', $source);
+  }
+  if ($year) {
+    $suggestions[] = 'date_example_quote__' . $year;
+  }
+  if ($source) {
+    $suggestions[] = 'date_example_quote__' . $source;
+  }
+  if ($author) {
+    $suggestions[] = 'date_example_quote__' . $author;
+  }
+  if ($author && $year && $source) {
+    $suggestions[] = 'date_example_quote__' . $author . '__' . $year . '__' . $source;
+  }
+  return $suggestions;
+}
+
+/**
  * Implements template_preprocess_HOOK().
  */
 function template_preprocess_date_example_quote(array &$variables) {

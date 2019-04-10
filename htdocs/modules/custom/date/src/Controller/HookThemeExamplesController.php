@@ -35,7 +35,17 @@ class HookThemeExamplesController extends ControllerBase {
       ],
     ];
     // Example #3 (quote).
-    $result_quote = [
+    $result_quote1 = [
+      '#theme' => 'date_example_quote',
+      '#quote' => 'This is the first quote',
+    ];
+    $result_quote2 = [
+      '#theme' => 'date_example_quote',
+      '#quote' => 'This is the second quote',
+      '#author' => 'John Doe',
+      '#year' => 2017,
+    ];
+    $result_quote3 = [
       '#theme' => 'date_example_quote',
       '#quote' => 'It was a nice day',
       '#author' => 'John Doe',
@@ -46,7 +56,9 @@ class HookThemeExamplesController extends ControllerBase {
     return [
       $results1,
       $results,
-      $result_quote,
+      $result_quote1,
+      $result_quote2,
+      $result_quote3,
     ];
   }
 }

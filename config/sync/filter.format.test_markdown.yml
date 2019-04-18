@@ -1,0 +1,17 @@
+uuid: 30a14589-ebbd-498c-a535-b07b2bd356fb
+langcode: en
+status: true
+dependencies:
+  module:
+    - markdown
+name: 'Test markdown'
+format: test_markdown
+weight: 0
+filters:
+  markdown:
+    id: markdown
+    provider: markdown
+    status: true
+    weight: 0
+    settings:
+      markdown_library: php-markdown

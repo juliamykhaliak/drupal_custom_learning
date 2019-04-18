@@ -1,0 +1,33 @@
+uuid: 3fa9e54e-b06e-4b74-9037-d147f5861f84
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.paragt_raph_.body
+    - field.field.node.paragt_raph_.field_test
+    - node.type.paragt_raph_
+  module:
+    - text
+    - user
+id: node.paragt_raph_.teaser
+targetEntityType: node
+bundle: paragt_raph_
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_test: true
+  langcode: true

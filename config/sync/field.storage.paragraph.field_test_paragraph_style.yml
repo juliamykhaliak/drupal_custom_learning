@@ -1,0 +1,24 @@
+uuid: d0c4d476-06a5-47df-90c7-e896d79392a9
+langcode: en
+status: true
+dependencies:
+  module:
+    - classy_paragraphs
+    - field_permissions
+    - paragraphs
+third_party_settings:
+  field_permissions:
+    permission_type: public
+id: paragraph.field_test_paragraph_style
+field_name: field_test_paragraph_style
+entity_type: paragraph
+type: entity_reference
+settings:
+  target_type: classy_paragraphs_style
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

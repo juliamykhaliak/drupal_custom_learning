@@ -1,0 +1,33 @@
+uuid: 1a182745-c6f6-4dc8-bc68-d61da353ef78
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.test_type_paragraph.field_test_paragraph_style
+    - field.field.paragraph.test_type_paragraph.field_test_txt_paraghra
+    - paragraphs.paragraphs_type.test_type_paragraph
+id: paragraph.test_type_paragraph.default
+targetEntityType: paragraph
+bundle: test_type_paragraph
+mode: default
+content:
+  field_test_paragraph_style:
+    weight: 0
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_test_txt_paraghra:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true

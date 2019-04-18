@@ -1,0 +1,10 @@
+drupalbook_owlcarousel:
+  css:
+    theme:
+      js/owlcarousel/assets/owl.carousel.css: {}
+      js/owlcarousel/assets/owl.theme.default.min.css: {}
+  js:
+    js/owlcarousel/owl.carousel.min.js: {}
+    js/drupalbook_owlcarousel.js: {}
+  dependencies:
+    - core/jquery

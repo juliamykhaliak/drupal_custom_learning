@@ -1,0 +1,10 @@
+<?php
+
+/**
+ * hook_preprocess_views_view().
+ */
+function drupalbook_owlcarousel_preprocess_views_view(&$variables) {
+  if ($variables['view']->storage->id() == 'slideshow') {
+    $variables['#attached']['library'][] = 'drupalbook_owlcarousel/drupalbook_owlcarousel';
+  }
+}

@@ -1,0 +1,13 @@
+uuid: d08e3130-8bd4-4598-b145-c3bf8fbd356f
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.use_subscribe.unflag
+label: Unfollow
+type: user
+plugin: 'flag_action:use_subscribe.unflag'
+configuration:
+  flag_id: use_subscribe
+  flag_action: unflag

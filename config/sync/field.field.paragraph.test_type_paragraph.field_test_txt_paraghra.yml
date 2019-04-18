@@ -1,0 +1,19 @@
+uuid: 2cf4e4b1-87c6-409e-8f72-2ff0096d93e7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_test_txt_paraghra
+    - paragraphs.paragraphs_type.test_type_paragraph
+id: paragraph.test_type_paragraph.field_test_txt_paraghra
+field_name: field_test_txt_paraghra
+entity_type: paragraph
+bundle: test_type_paragraph
+label: 'Test txt paraghraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

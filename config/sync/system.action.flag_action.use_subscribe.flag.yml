@@ -1,0 +1,13 @@
+uuid: ac9cb0dc-1f18-4355-87eb-b066a254aa3b
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.use_subscribe.flag
+label: Follow
+type: user
+plugin: 'flag_action:use_subscribe.flag'
+configuration:
+  flag_id: use_subscribe
+  flag_action: flag

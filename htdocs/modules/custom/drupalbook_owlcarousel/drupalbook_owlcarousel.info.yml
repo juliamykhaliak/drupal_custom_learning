@@ -1,0 +1,5 @@
+name: Drupalbook OwlCarousel
+core: 8.x
+type: module
+description: owlcarousel slideshow
+package: front-end

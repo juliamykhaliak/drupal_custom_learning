@@ -1,0 +1,23 @@
+uuid: 051f5d15-7cba-4cc4-b882-2b4883ef8db8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_test_paragraph_style
+    - paragraphs.paragraphs_type.test_type_paragraph
+id: paragraph.test_type_paragraph.field_test_paragraph_style
+field_name: field_test_paragraph_style
+entity_type: paragraph
+bundle: test_type_paragraph
+label: 'Test paragraph style'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:classy_paragraphs_style'
+  handler_settings:
+    target_bundles: null
+    auto_create: false
+field_type: entity_reference

@@ -1,0 +1,40 @@
+uuid: f19fa46b-7f89-4384-bbb6-406c6f4f4cce
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.paragt_raph_.body
+    - field.field.node.paragt_raph_.field_test
+    - node.type.paragt_raph_
+  module:
+    - entity_reference_revisions
+    - text
+    - user
+id: node.paragt_raph_.default
+targetEntityType: node
+bundle: paragt_raph_
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_test:
+    type: entity_reference_revisions_entity_view
+    weight: 102
+    label: above
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  langcode: true

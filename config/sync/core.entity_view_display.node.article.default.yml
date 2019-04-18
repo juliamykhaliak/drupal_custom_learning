@@ -55,9 +55,15 @@ content:
     settings:
       link: true
     third_party_settings: {  }
+  flag_bookmark:
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 100
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  langcode: true

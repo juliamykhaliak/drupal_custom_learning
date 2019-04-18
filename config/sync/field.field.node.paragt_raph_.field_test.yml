@@ -1,0 +1,29 @@
+uuid: 2aea0afa-d5f1-4cd3-878d-0ce6dd46d665
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test
+    - node.type.paragt_raph_
+  module:
+    - entity_reference_revisions
+id: node.paragt_raph_.field_test
+field_name: field_test
+entity_type: node
+bundle: paragt_raph_
+label: 'Test type paragraph'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      test_type_paragraph:
+        weight: 2
+        enabled: false
+field_type: entity_reference_revisions

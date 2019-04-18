@@ -1,0 +1,23 @@
+uuid: 474611ff-1d72-40ea-b9bf-8080c5f31bb6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test__
+    - node.type.test_content_type
+  module:
+    - block_field
+id: node.test_content_type.field_test__
+field_name: field_test__
+entity_type: node
+bundle: test_content_type
+label: Test
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  plugin_ids:
+    'views_block:who_s_new-block_1': 'views_block:who_s_new-block_1'
+field_type: block_field

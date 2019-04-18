@@ -1,0 +1,45 @@
+uuid: 6441b063-e5bb-4d08-bbdf-804477a83c2f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.test_content_type.body
+    - field.field.node.test_content_type.field_description
+    - field.field.node.test_content_type.field_gallery
+    - field.field.node.test_content_type.field_map
+    - field.field.node.test_content_type.field_parallax
+    - field.field.node.test_content_type.field_photo
+    - field.field.node.test_content_type.field_photo_content
+    - field.field.node.test_content_type.field_test__
+    - node.type.test_content_type
+  module:
+    - text
+    - user
+id: node.test_content_type.teaser
+targetEntityType: node
+bundle: test_content_type
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 101
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_description: true
+  field_gallery: true
+  field_map: true
+  field_parallax: true
+  field_photo: true
+  field_photo_content: true
+  field_test__: true
+  langcode: true

@@ -1,0 +1,30 @@
+uuid: 47c869cd-3014-4db8-af23-82010add15ad
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.test_type_paragraph.field_test_paragraph_style
+    - field.field.paragraph.test_type_paragraph.field_test_txt_paraghra
+    - paragraphs.paragraphs_type.test_type_paragraph
+id: paragraph.test_type_paragraph.default
+targetEntityType: paragraph
+bundle: test_type_paragraph
+mode: default
+content:
+  field_test_paragraph_style:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_test_txt_paraghra:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

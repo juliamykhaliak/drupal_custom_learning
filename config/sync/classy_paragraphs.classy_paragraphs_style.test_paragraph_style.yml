@@ -1,0 +1,7 @@
+uuid: cf3d95e7-dadb-4221-ab0f-3f09b6c5bd85
+langcode: en
+status: true
+dependencies: {  }
+id: test_paragraph_style
+label: 'Test paragraph style'
+classes: "julia\r\ntest\r\nflow\r\nlorem\r\nipsum"

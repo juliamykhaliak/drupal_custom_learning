@@ -1,0 +1,66 @@
+uuid: b546bc13-56bd-486e-b166-f798acbc85ce
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page._homepage
+    - views.view.comments_recent
+    - views.view.content_recent
+  module:
+    - panels
+    - system
+    - views
+id: _homepage-panels_variant-1
+label: Default
+variant: panels_variant
+variant_settings:
+  blocks:
+    bd17ffee-a64b-4fc5-b8e1-a083e1b9daa3:
+      id: 'views_block:comments_recent-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: first
+      weight: 0
+      uuid: bd17ffee-a64b-4fc5-b8e1-a083e1b9daa3
+      context_mapping: {  }
+    2903a31d-d61c-4cb6-bfae-dc9655908b88:
+      id: 'views_block:content_recent-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: second
+      weight: 0
+      uuid: 2903a31d-d61c-4cb6-bfae-dc9655908b88
+      context_mapping: {  }
+    153a6af5-3e59-4e33-9f9e-0783674929a7:
+      id: system_branding_block
+      label: 'Site branding'
+      provider: system
+      label_display: '0'
+      use_site_logo: true
+      use_site_name: true
+      use_site_slogan: true
+      region: bottom
+      weight: 0
+      uuid: 153a6af5-3e59-4e33-9f9e-0783674929a7
+      context_mapping: {  }
+  id: panels_variant
+  uuid: ab5a3b82-4847-4161-805e-3f54060c53f2
+  label: null
+  weight: 0
+  layout: layout_twocol
+  layout_settings: {  }
+  page_title: 'Default Homepage'
+  storage_type: page_manager
+  storage_id: _homepage-panels_variant-1
+  builder: standard
+page: _homepage
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

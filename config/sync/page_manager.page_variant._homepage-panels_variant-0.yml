@@ -1,0 +1,61 @@
+uuid: b31540fa-7bd2-412a-9f1c-f0ad838de6d7
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page._homepage
+    - views.view.comments_recent
+    - views.view.content_recent
+  module:
+    - panels
+    - user
+    - views
+id: _homepage-panels_variant-0
+label: 'authenticated user'
+variant: panels_variant
+variant_settings:
+  blocks:
+    db76cf55-136b-4b66-8676-327ca6de2328:
+      id: 'views_block:comments_recent-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: 0
+      uuid: db76cf55-136b-4b66-8676-327ca6de2328
+      context_mapping: {  }
+    255a4df8-182d-4395-b5bf-bea410786206:
+      id: 'views_block:content_recent-block_1'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: second
+      weight: 0
+      uuid: 255a4df8-182d-4395-b5bf-bea410786206
+      context_mapping: {  }
+  id: panels_variant
+  uuid: f5a98397-9e37-430a-8818-c1914fd02547
+  label: null
+  weight: 0
+  layout: layout_twocol
+  layout_settings: {  }
+  page_title: 'authenticated user'
+  storage_type: page_manager
+  storage_id: _homepage-panels_variant-0
+  builder: standard
+page: _homepage
+weight: 0
+selection_criteria:
+  -
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: current_user
+selection_logic: and
+static_context: {  }
